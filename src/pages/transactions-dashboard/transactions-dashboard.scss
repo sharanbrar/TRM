@@ -1,4 +1,7 @@
 page-transactions-dashboard {
+  .bar-button-ios[icon-only], .bar-button-md[icon-only]{
+    color: white;
+  }
 	.menubar-icons{
 		margin: 0px;
 	}
@@ -25,16 +28,7 @@ page-transactions-dashboard {
         background: #30b7ff;
         .toolbar-background {
             background: #30b7ff !important;
-            
          }
-         .title{
-         	padding: 0px;
-         .toolbar-title{
-             color:#000;
-             font-weight: normal;
-            text-align: left;
-         }
-     }
          .back-button{
              .button-inner{
                  color: #000;
