@@ -1,4 +1,17 @@
 page-house-team {
+	.header{
+		.back-button {
+			.button-inner{
+			color: #fff ;
+		}
+		}
+		.toolbar{
+			 .toolbar-background {
+			     background: #6cc166;
+			            
+			}
+		}
+	}
 	.custom-item{
 		&.item{
 		      &.item-block{

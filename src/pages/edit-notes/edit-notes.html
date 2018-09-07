@@ -4,24 +4,25 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
+<ion-header>
+  <ion-navbar>
+    <ion-title>Pam Nelson and Bill Nelson</ion-title>
+  </ion-navbar>
+</ion-header>
 <ion-content>
 	<ion-list no-lines>
-		<ion-item class="custom-item">
-			  <ion-icon name="arrow-back" item-start (click)="dismiss(null)"></ion-icon>
-			  Pam Nelson and Bill Nelson
-		</ion-item>
 		<ion-item>
 			Notes
 		</ion-item>
-		<ion-item>
+		<ion-item class="input-i" [ngClass]="{'error':notetitleerror}">
 			<ion-label  floating>Note Title</ion-label>
 	    	<ion-input [(ngModel)]="noteTitle"></ion-input>
 		</ion-item>
-		<ion-item>
+		<ion-item class="input-i" [ngClass]="{'error':notedescerror}">
 			<ion-label  floating>Enter your notes here.</ion-label>
-	    	<ion-textarea [(ngModel)]="noteDesc"></ion-textarea>
+	    	<ion-input [(ngModel)]="noteDesc"></ion-input>
 		</ion-item>
-		<ion-item>
+		<ion-item class="input-i">
 			<p>
 				<button ion-button color="dark" clear (click)="dismiss(null)">CANCEL</button>
 				<button ion-button color="dark" clear (click)="save()">SAVE</button>

@@ -1,13 +1,77 @@
-page-edit-notes {	
-	&.item{
-      &.item-block{
-      	padding: 10px;
-      .item-inner{
-        .input-wrapper{
-          .label{
+page-edit-notes {
+	.header{
+		.back-button {
+			.button-inner{
+			color: #fff ;
+		}
+		}
+		.toolbar{
+			 .toolbar-background {
+			     background: #6cc166;
+			            
 			}
-	  	  } 
+		}
+	}
+	.input-i{
+		&.item{
+	      &.item-block{
+	      .item-inner{
+	      	    padding-left: 20px!important;
+	      	    padding-right: 20px!important;
+		    }
+		  }
+		}
+	}
+	.error{
+		&.item{
+	      &.item-block{
+	      .item-inner{
+	      	    .input-wrapper{
+	      	    	.input{
+						.text-input{
+							border-bottom: 1px solid red;
+						}
+					}
+	      	    }
+		    }
+		  }
+		}
+	}
+	.item{
+      &.item-block{
+      .item-inner{
+      	    padding: 10px!important;
+      	    .input-wrapper{
+      	    	.label{
+					p{
+						text-align: right;
+					}
+				}
+				.input{
+					.text-input{
+						border-bottom: 1px solid #000;
+					}
+				}
+			}
 	    }
 	  }
 	}
+}
+
+
+.modal-wrapper{
+.list{
+	.custom-item{
+		&.item-block {
+			 background: #6cc166;																																																																																																																																																																																																		
+			 .icon{
+			 	color: #fff;
+			 }
+			 .item-inner{
+			 	padding: 0px;
+			 }
+
+		}
+	}
+}
 }

@@ -1,4 +1,17 @@
 page-checklist {
+	.header{
+		.back-button {
+			.button-inner{
+			color: #fff ;
+		}
+		}
+		.toolbar{
+			 .toolbar-background {
+			     background: #6cc166;
+			            
+			}
+		}
+	}
 	.progress-p{
 		display: flex;
 		.progress{
