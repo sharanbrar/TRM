@@ -1,0 +1,24 @@
+page-house-team {
+	.custom-item{
+		&.item{
+		      &.item-block{
+		      .item-inner{
+		        .input-wrapper{
+		          .label{
+	                padding: 10px;
+	                p{
+	                	span{
+	                		font-size: 11px;
+	                	}
+	                }
+	          	  } 
+		        }
+		        .menu-more-icon{
+		          	 font-size: 25px;
+        			 color: #949494!important;
+	      		}
+		      }
+		    }
+		  }
+	}
+}

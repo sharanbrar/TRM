@@ -3,8 +3,12 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
+import { TransactionsDashboardPage } from '../pages/transactions-dashboard/transactions-dashboard';
+import { DashboardFloatMenusPage } from '../pages/dashboard-float-menus/dashboard-float-menus';
+import { HouseTeamPage } from '../pages/house-team/house-team';
+import { ChecklistPage } from '../pages/checklist/checklist';
+import { NotesPage } from '../pages/notes/notes';
+import { EditNotesPage } from '../pages/edit-notes/edit-notes';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -12,8 +16,12 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 @NgModule({
   declarations: [
     MyApp,
-    HomePage,
-    ListPage
+    TransactionsDashboardPage,
+    DashboardFloatMenusPage,
+    HouseTeamPage,
+    ChecklistPage,
+    NotesPage,
+    EditNotesPage
   ],
   imports: [
     BrowserModule,
@@ -22,8 +30,12 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage,
-    ListPage
+    TransactionsDashboardPage,
+    DashboardFloatMenusPage,
+    HouseTeamPage,
+    ChecklistPage,
+    NotesPage,
+    EditNotesPage
   ],
   providers: [
     StatusBar,

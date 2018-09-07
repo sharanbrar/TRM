@@ -1,0 +1,118 @@
+page-transactions-dashboard {
+	.menubar-icons{
+		margin: 0px;
+	}
+	.select-type-item{
+		text-align: center;
+	}
+	ion-item.select-type-item.item.item-block.buyers {
+	    background: #6cc166;
+	}
+	ion-item.select-type-item.item.item-block.sellers {
+	    background: #f5a623;
+	}
+	ion-item.select-type-item.item.item-block.lanlords {
+	    background: #6cc166;
+	}
+	ion-item.select-type-item.item.item-block.tenants {
+	    background: #f5a623;
+	}
+
+	.header{
+		.bar-buttons{
+			color: #fff !important;
+		}
+        background: #30b7ff;
+        .toolbar-background {
+            background: #30b7ff !important;
+            
+         }
+         .title{
+         	padding: 0px;
+         .toolbar-title{
+             color:#000;
+             font-weight: normal;
+            text-align: left;
+         }
+     }
+         .back-button{
+             .button-inner{
+                 color: #000;
+                 span.back-button-text {
+                    font-size: 0px;
+                    background: #30b7ff !important;;
+                 }
+             }
+         }
+         .toolbar-content{
+    	.menubar-icons{
+    		.item{
+    			background: transparent;
+    			.icon{
+    				color: #fff;
+    			}
+    		}
+    	}
+    }
+    }
+        .house-list-item{
+    		  border-bottom: 0  none;
+			    margin-bottom: 10px;
+			    border-width: auto !important;
+			    box-shadow: 0px 1px 2px 1px #ccc;
+			    	} 
+    
+  .item{
+    &.item-block{
+    	    padding-left: 0px;
+ 
+
+  
+    &.select-type-item-list{
+    	.item-inner{
+    		.input-wrapper{
+    			.label{
+    				.list{
+    					.item{
+    					     padding: 2px 0 0 30px; 
+    					}
+    				}
+    			}
+    		}
+    	}
+    }
+    .item-inner{
+      padding-right: 0px !important;
+      border: 0 none !important;
+      .input-wrapper{
+        .label{
+          margin: 0px !important;
+          .house-img{
+          	text-align: center;
+          }
+          p{
+          	button{
+          		&.item-button {
+          			padding: 0 10px 0 0;
+          			color: #000;
+          			&.menu-more-icon{
+          				padding: 0px;
+          				float: right;
+          			}
+          		}
+          	}
+          }
+          .list{
+          	    margin: 0px 0 1px;
+            .item{
+            	&.house-image{
+                 padding: 0px;
+            }
+          }
+         }
+        } 
+      }
+    }
+  }
+  }
+}

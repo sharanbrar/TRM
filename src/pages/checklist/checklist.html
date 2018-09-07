@@ -1,0 +1,46 @@
+<!--
+  Generated template for the ChecklistPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{houseData.title}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+	<ion-list no-lines>
+		<ion-item class="custom-item top">
+			<p>Counselling Session & <br> Procurement Checklist</p>
+			<p item-end class="progress-p">40% <span class="progress"></span></p>
+		</ion-item>
+		<!-- List Item Starts Here -->
+		 	<ion-item class="custom-item phase-list-item" *ngFor="let phase of houseData.phases; let phaseitem = index;">
+		 		<ion-list no-lines>
+		 			<ion-item>
+		 				<p class="property-name-address">
+				 			<span class="name">{{phase.name}}</span><br>
+			 			</p>
+			 			<ion-icon (click)="toggleHouse(phaseitem)" *ngIf="phase.status == 0 && !isHouseShown(phaseitem)" name="arrow-dropdown" item-end ></ion-icon>
+			 			<ion-icon (click)="toggleHouse(phaseitem)" *ngIf="phase.status == 0 && isHouseShown(phaseitem)" name="arrow-dropup" item-end></ion-icon>
+			 			<ion-icon *ngIf="phase.status == 1" name="checkmark" item-end></ion-icon>
+
+		 			</ion-item>
+		 			<ion-item *ngIf="isHouseShown(phaseitem)">
+				 		<p class="phase-desc" >{{phase.desc}}</p>
+		 			</ion-item>
+		 			<ion-item>
+		 				<p class="phase-action-buttons">
+		 					<button *ngIf="phase.status == 0" ion-button color="dark" clear (click)="mark(phase.id,1)">COMPLETE</button>
+		 					<button *ngIf="phase.status == 1" ion-button color="dark" clear (click)="mark(phase.id,0)">RE-OPEN</button>
+		 				</p>
+		 			</ion-item>
+		 		</ion-list>
+		 	</ion-item>
+		<!-- List Item Ends Here -->
+	</ion-list>
+</ion-content>
+

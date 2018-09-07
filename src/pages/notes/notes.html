@@ -1,0 +1,39 @@
+<!--
+  Generated template for the NotesPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{houseData.title}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+	<ion-list no-lines>
+		<ion-item class="custom-item ">
+			Notes
+		</ion-item>
+		<ion-item class="custom-item note-list-item wrap" *ngFor="let note of houseData.notes; let noteitem = index;" >
+			<div class="note-content">
+				<div class="note-title" >
+					<p>
+						{{note.title}}
+						<br><span class="time">Note by you</span> <span class="time">{{note.date | date : 'EEE MMM d h:mm a'}}</span>
+					</p>
+				</div>
+				<div class="note-desc"><p>{{note.desc}}</p></div>
+				<div class="menu-button">
+					<p>
+						<button class="menu-more-icon" ion-button color="dark" clear (click)="presentPopover(note.id)"><ion-icon name="more" item-end></ion-icon></button>
+					</p>
+				</div>
+			</div>
+		</ion-item>
+	</ion-list>
+		<ion-item class="add-icon" (click)="addnewnote()">
+			<img src="assets/imgs/add-icon.png">
+		</ion-item>
+</ion-content>

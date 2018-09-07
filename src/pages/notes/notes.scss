@@ -1,0 +1,41 @@
+page-notes {
+	.custom-item{
+		&.item{
+		      &.item-block{
+		      .item-inner{
+		        .input-wrapper{
+		          .label{
+	                padding: 10px;
+	                .note-content{
+						white-space: normal!important;
+						p{
+							color:#000;
+				          	button{
+				          		&.item-button {
+				          			padding: 0 10px 0 0;
+				          			color: #000;
+				          			&.menu-more-icon{
+				          				padding: 0px;
+				          				float: right;
+				          			}
+				          		}
+				          	}
+						}
+						div{
+							&.note-title,&.note-desc{
+								padding: 10px 0;
+							}
+							p{
+								.time{
+									font-size:11px;
+								}
+							}
+						}
+					}
+	          	  } 
+		        }
+		      }
+		    }
+		  }
+	}
+}
