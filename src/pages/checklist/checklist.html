@@ -34,8 +34,8 @@
 		 			</ion-item>
 		 			<ion-item>
 		 				<p class="phase-action-buttons">
-		 					<button *ngIf="phase.status == 0" ion-button color="dark" clear (click)="mark(phase.id,1)">COMPLETE</button>
-		 					<button *ngIf="phase.status == 1" ion-button color="dark" clear (click)="mark(phase.id,0)">RE-OPEN</button>
+		 					<button class="act-btn-button" *ngIf="phase.status == 0" ion-button color="dark" clear (click)="mark(phase.id,1)">COMPLETE</button>
+		 					<button class="act-btn-button" *ngIf="phase.status == 1" ion-button color="dark" clear (click)="mark(phase.id,0)">RE-OPEN</button>
 		 				</p>
 		 			</ion-item>
 		 		</ion-list>

@@ -33,7 +33,7 @@ export class HouseTeamPage {
     console.log('ionViewDidLoad HouseTeamPage');
   }
 
-  presentPopover(id) {
+  presentPopover(id,event) {
     let actions = [
             {title:'Call',do:'call'},
             {title:'Send Notes',do:'note'},
@@ -45,7 +45,7 @@ export class HouseTeamPage {
           console.log(data);
         }
     });
-    popover.present();
+    popover.present({ev:event});
   }
 
 }

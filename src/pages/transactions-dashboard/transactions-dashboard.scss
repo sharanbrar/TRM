@@ -22,6 +22,19 @@ page-transactions-dashboard {
 	}
 
 	.header{
+    .tool-searbar{
+        padding: 1px 1px 1px 1px;
+        min-height: auto!important;
+      .toolbar-background{
+        min-height: auto!important;
+        border-bottom: 0;
+      }
+      ion-searchbar{
+        &.searchbar{
+          min-height: auto;
+        }
+      }
+    }
 		.bar-buttons{
 			color: #fff !important;
 		}

@@ -27,7 +27,7 @@ export class NotesPage {
 			 		 {id:1,
 			 		 	title:'Pam Is Coming to the Intro Meeting',
 			 		 	desc:"Just a little reminder that Pam will be there. Originally it was only going to be Bill, but now she can make it.",
-			 		 	date : "4-9-2018 16:33:16"
+			 		 	date : "4/9/2018 16:33:16"
 			 		 },
 		 		 ]
   	}
@@ -37,11 +37,10 @@ export class NotesPage {
     console.log('ionViewDidLoad NotesPage');
   }
 
-  presentPopover(id) {
+  presentPopover(id,event) {
   	let actions = [
   					{title:'Edit',do:'edit'},
   					{title:'Share',do:'share'},
-  					{title:'Archive',do:'archive'},
   				  ];
     const popover = this.popoverCtrl.create(DashboardFloatMenusPage,{id:id,actions:actions});
     popover.onDidDismiss(data => {
@@ -54,7 +53,7 @@ export class NotesPage {
           }
         }
     });
-    popover.present();
+    popover.present({ev:event});
   }
 
   removeNote(id){

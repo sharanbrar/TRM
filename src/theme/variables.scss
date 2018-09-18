@@ -87,25 +87,16 @@ $colors: (
 @import "roboto";
 @import "noto-sans";
 
+button.act-btn-button{
+  color: #6200ee!important;
+}
 
-
-ion-item.add-icon {
-background: #488aff;
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    margin: 0 auto;
-    text-align: center;
-    min-height: auto;
-    img{
-      padding: 3px 0px 0px;
-      max-width: 24px;
+ion-fab.act-btn-add-new {
+  .fab ion-icon {
+    font-size: 3.5em!important;
   }
 }
- 
+
 .back-button{
    .button-inner{
        color: #000;

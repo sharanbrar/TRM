@@ -27,13 +27,13 @@
 				<div class="note-desc"><p>{{note.desc}}</p></div>
 				<div class="menu-button">
 					<p>
-						<button class="menu-more-icon" ion-button color="dark" clear (click)="presentPopover(note.id)"><ion-icon name="more" item-end></ion-icon></button>
+						<button class="act-btn-button menu-more-icon" ion-button color="dark" clear (click)="presentPopover(note.id,$event)"><ion-icon name="more" item-end></ion-icon></button>
 					</p>
 				</div>
 			</div>
 		</ion-item>
 	</ion-list>
-		<ion-item class="add-icon" (click)="addnewnote()">
-			<img src="assets/imgs/add-icon.png">
-		</ion-item>
+		<ion-fab class="act-btn-add-new" bottom right (click)="addnewnote()">
+		   <button ion-fab color="primary"><ion-icon name="add"></ion-icon></button>
+		</ion-fab>
 </ion-content>

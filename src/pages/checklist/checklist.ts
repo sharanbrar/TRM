@@ -82,6 +82,9 @@ export class ChecklistPage {
     let index = this.houseData.phases.map(function(e) { return e.id; }).indexOf(id);
     if(index > -1){
       this.houseData.phases[index]['status'] = val;
+      if(index == this.phaseShown){
+        this.phaseShown = null;
+      }
     }
   }
 }

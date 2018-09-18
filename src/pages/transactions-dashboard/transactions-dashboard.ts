@@ -16,9 +16,12 @@ import { NotesPage } from '../notes/notes';
   templateUrl: 'transactions-dashboard.html',
 })
 export class TransactionsDashboardPage {
+  MainhouseData : any;
   houseData : any;
   shownHouse : any;
   SelectedlistType: any;
+  SearchInput : any = '';
+  showSearchbar:boolean= false;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,public popoverCtrl: PopoverController) {
   	this.houseData= [
@@ -37,13 +40,22 @@ export class TransactionsDashboardPage {
   			 type : 'Seller'
   			}
   	];
+    this.MainhouseData = this.houseData;
   	this.SelectedlistType = 'Buyers'; // Buyers,Seller,Landlord,Tenant
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad TransactionsDashboardPage');
   }
+  search(e){
+    if(this.SearchInput){
+      console.log(e,this.SearchInput);
+    }
+  }
 
+  toggleSearch(){
+    this.showSearchbar = (this.showSearchbar) ? false : true ;
+  }
   renderListClass() {
 	  switch(this.SelectedlistType){
 	    case "Buyers":
@@ -57,7 +69,7 @@ export class TransactionsDashboardPage {
 	  }
   }
 
-  presentPopover(id) {
+  presentPopover(id,event) {
   	let actions = [
   					{title:'Edit',do:'edit'},
   					{title:'Share',do:'share'},
@@ -72,7 +84,7 @@ export class TransactionsDashboardPage {
           }
         }
     });
-    popover.present();
+    popover.present({ev:event});
   }
 
   removePost(id){

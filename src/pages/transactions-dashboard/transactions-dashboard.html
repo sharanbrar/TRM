@@ -11,13 +11,21 @@
     </button>
     <ion-title>Transaction Dashboard</ion-title>
     <ion-buttons end>
-      <button ion-button icon-only>
+      <button ion-button icon-only *ngIf="!showSearchbar">
         <ion-icon name="notifications"></ion-icon>
       </button>
-      <button ion-button icon-only>
+      <button ion-button icon-only (click) = "toggleSearch()">
         <ion-icon name="search"></ion-icon>
       </button>
     </ion-buttons>
+    <ion-toolbar *ngIf="showSearchbar" class="tool-searbar">
+    	<ion-searchbar
+		  [(ngModel)]="SearchInput	"
+		  [showCancelButton]="shouldShowCancel"
+		  (ionInput)="search($event)"
+		  (ionCancel)="toggleSearch($event)">
+		</ion-searchbar>
+    </ion-toolbar>
   </ion-navbar>
 </ion-header>
 
@@ -25,10 +33,10 @@
 <ion-content>
 	<div class="transaction-content">
 		 <ion-list no-lines>
-		 	<ion-item class="select-type-item" [ngClass]="renderListClass()">
+		 	<ion-item class="select-type-item" [ngClass]="renderListClass()" (tap)="toggleHouse(-50)">
 		 				{{SelectedlistType}} 
-		 				<ion-icon (tap)="toggleHouse(-50)" *ngIf="!isHouseShown(-50)" name="arrow-dropdown"></ion-icon>
-		 				<ion-icon (tap)="toggleHouse(-50)" *ngIf="isHouseShown(-50)" name="arrow-dropup"></ion-icon>
+		 				<ion-icon  *ngIf="!isHouseShown(-50)" name="arrow-dropdown"></ion-icon>
+		 				<ion-icon  *ngIf="isHouseShown(-50)" name="arrow-dropup"></ion-icon>
 		 	</ion-item>
 		 	<ion-item class="select-type-item-list" *ngIf="isHouseShown(-50)">
 	 				<ion-list no-lines>
@@ -41,23 +49,23 @@
 		 	<!-- List Item Starts Here -->
 		 	<ion-item class="custom-item house-list-item" *ngFor="let house of houseData; let houseitem = index;">
 		 		<ion-list no-lines>
-		 			<ion-item>
+		 			<ion-item (tap)="toggleHouse(houseitem)">
 		 				<p class="property-name-address">
 				 			<span class="name">{{house.title}}</span><br>
 				 			<span class="address">{{house.address}}</span>
 			 			</p>
-			 			<ion-icon (tap)="toggleHouse(houseitem)" *ngIf="!isHouseShown(houseitem)" name="arrow-dropdown" item-end ></ion-icon>
-			 			<ion-icon (tap)="toggleHouse(houseitem)" *ngIf="isHouseShown(houseitem)" name="arrow-dropup" item-end></ion-icon>
+			 			<ion-icon  *ngIf="!isHouseShown(houseitem)" name="arrow-dropdown" item-end ></ion-icon>
+			 			<ion-icon  *ngIf="isHouseShown(houseitem)" name="arrow-dropup" item-end></ion-icon>
 		 			</ion-item>
 		 			<ion-item class="house-image" *ngIf="isHouseShown(houseitem)">
 				 		<div class="house-img"><img src="{{house.image}}"></div>
 		 			</ion-item>
 		 			<ion-item class="house-action-buttons">
 		 				<p>
-			 				<button ion-button color="dark" clear (tap)="openChecklist(house.id)">CHECKLIST</button>
-			 				<button ion-button color="dark" clear (tap)="opennotes(house.id)">NOTES</button>
-			 				<button ion-button color="dark" (tap)="openTeam(house.id)" clear>TEAM</button>
-			 				<button class="menu-more-icon" ion-button color="dark" clear (tap)="presentPopover(house.id)"><ion-icon name="more" item-end></ion-icon></button>
+			 				<button class="act-btn-button" ion-button color="dark" clear (tap)="openChecklist(house.id)">CHECKLIST</button>
+			 				<button class="act-btn-button" ion-button color="dark" clear (tap)="opennotes(house.id)">NOTES</button>
+			 				<button class="act-btn-button" ion-button color="dark" (tap)="openTeam(house.id)" clear>TEAM</button>
+			 				<button class="act-btn-button menu-more-icon" ion-button color="dark" clear (tap)="presentPopover(house.id,$event)"><ion-icon name="more" item-end></ion-icon></button>
 		 				</p>
 		 			</ion-item>
 		 		</ion-list>
